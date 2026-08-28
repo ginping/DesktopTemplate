@@ -48,7 +48,7 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: desktop-package-${{ matrix.os }}
           path: out/
@@ -69,7 +69,7 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: xvfb-run --auto-servernum pnpm test:e2e
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}
         with:
           name: electron-playwright-report
