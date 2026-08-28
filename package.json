@@ -1,0 +1,94 @@
+{
+  "name": "desktop-template",
+  "productName": "DesktopTemplate",
+  "version": "0.1.0",
+  "description": "Production-minded Electron starter for lightweight cross-platform desktop apps.",
+  "main": ".vite/build/main.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginping/DesktopTemplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ginping/DesktopTemplate/issues"
+  },
+  "homepage": "https://github.com/ginping/DesktopTemplate#readme",
+  "scripts": {
+    "bootstrap": "node scripts/install-git-hooks.mjs",
+    "dev": "electron-forge start",
+    "start": "electron-forge start",
+    "package": "electron-forge package && pnpm verify:package",
+    "make": "electron-forge make",
+    "verify:package": "node scripts/verify-package.mjs",
+    "format": "biome check --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e:prepare": "pnpm package",
+    "test:e2e:run": "playwright test",
+    "test:e2e": "pnpm test:e2e:prepare && pnpm test:e2e:run",
+    "docs:check": "node scripts/docs-check.mjs",
+    "check:fast": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm docs:check",
+    "check": "pnpm check:fast && pnpm test:e2e"
+  },
+  "keywords": [
+    "desktop",
+    "electron",
+    "react",
+    "starter",
+    "template"
+  ],
+  "author": "ginping",
+  "license": "MIT",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "electron-winstaller",
+      "esbuild"
+    ],
+    "overrides": {
+      "@electron/packager": "20.3.0",
+      "@electron/rebuild": "4.2.0",
+      "tar": "7.5.22",
+      "tmp": "0.2.7"
+    },
+    "patchedDependencies": {
+      "@electron-forge/core@7.11.2": "patches/@electron-forge__core@7.11.2.patch"
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.11",
+    "@electron-forge/cli": "^7.11.2",
+    "@electron-forge/maker-deb": "^7.11.2",
+    "@electron-forge/maker-rpm": "^7.11.2",
+    "@electron-forge/maker-squirrel": "^7.11.2",
+    "@electron-forge/maker-zip": "^7.11.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.11.2",
+    "@electron-forge/plugin-fuses": "^7.11.2",
+    "@electron-forge/plugin-vite": "^7.11.2",
+    "@electron/asar": "^3.4.1",
+    "@electron/fuses": "^1.0.0",
+    "@playwright/test": "^1.62.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/electron-squirrel-startup": "^1.0.2",
+    "@types/node": "^22.19.11",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^5.1.1",
+    "axe-core": "^4.13.0",
+    "electron": "44.0.0",
+    "jsdom": "^28.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.6",
+    "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "packageManager": "pnpm@10.6.5"
+}
