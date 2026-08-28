@@ -1,10 +1,10 @@
-# Desktop Incident Response
+# 桌面端故障响应
 
-1. Record OS, architecture, app version, install source, startup stage, and reproducible action.
-2. Separate main-process failure, preload/IPC failure, renderer failure, local-data corruption, and packaging/signing failure.
-3. Reproduce with a clean profile without deleting the affected user's data.
-4. Compare the installed artifact with the last accepted release and CI package.
-5. Stop rollout or restore the last accepted release when the current artifact is causal.
-6. Add a regression test at the narrowest layer and verify all supported platforms in proportion to risk.
+1. 记录操作系统、架构、应用版本、安装来源、启动阶段和可复现操作。
+2. 区分主进程故障、preload/IPC 故障、renderer 故障、本地数据损坏和打包/签名故障。
+3. 使用全新 profile 复现，不删除受影响用户的数据。
+4. 对比已安装产物、上一个已验收版本和 CI 打包产物。
+5. 确认当前产物导致故障时，停止发布或恢复到上一个已验收版本。
+6. 在能够保护问题的最窄层添加回归测试，并按风险验证所有支持平台。
 
-A successful local dev session or package command does not prove an installed release is healthy.
+本地开发环境启动成功或打包命令通过，都不能单独证明已安装版本健康。

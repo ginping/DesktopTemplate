@@ -1,6 +1,6 @@
-# Runbook Index
+# 运维手册索引
 
-| Runbook | Use it when |
+| 手册 | 适用场景 |
 | --- | --- |
-| [Packaging and release](runbooks/packaging-and-release.md) | Building, signing, testing, or distributing desktop artifacts |
-| [Desktop incident response](runbooks/incident-response.md) | Startup, renderer, native capability, or release behavior fails |
+| [打包与发布](runbooks/packaging-and-release.md) | 构建、签名、测试或分发桌面端产物 |
+| [桌面端故障响应](runbooks/incident-response.md) | 启动、renderer、原生能力或发布行为异常 |

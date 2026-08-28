@@ -1,20 +1,20 @@
-# Project Progress
+# 项目进展
 
-## Current stage
+## 当前阶段
 
-The repository is a reusable cross-platform desktop foundation with no product domain, hosted backend, payment, signing, notarization, or auto-update service.
+仓库是可复用的跨平台桌面应用基础工程，不包含具体产品领域、托管后端、支付、代码签名、公证或自动更新服务。
 
-## Active priorities
+## 当前优先级
 
-1. Replace the starter surface with one coherent local-first workflow.
-2. Preserve the process, IPC, locale, theme, responsive, accessibility, test, and packaging contracts.
-3. Add native capabilities only through narrow typed interfaces.
+1. 用一个完整、聚焦的本地优先流程替换起始界面。
+2. 保持进程边界、IPC、语言、主题、响应式、可访问性、测试和打包契约。
+3. 只通过窄而明确的类型化接口添加原生能力。
 
-## Current facts
+## 当前事实
 
-- Electron Forge packages Linux, macOS, and Windows targets from one codebase.
-- The renderer is sandboxed and receives two typed capabilities: app metadata and theme preference.
-- Product state is local and the app can run offline.
-- Distribution artifacts are unsigned development packages.
+- Electron Forge 使用同一套代码打包 Linux、macOS 和 Windows 目标。
+- Renderer 运行在 sandbox 中，目前只接收两项类型化能力：应用 metadata 和主题偏好。
+- 产品状态保存在本地，应用可以离线运行。
+- 当前分发产物是未签名的开发包。
 
-Keep durable decisions in `docs/adr/`, operations in `docs/runbooks/`, and release history in `docs/CHANGELOG.md`.
+长期有效的决策写入 `docs/adr/`，运维操作写入 `docs/runbooks/`，发布历史写入 `docs/CHANGELOG.md`。

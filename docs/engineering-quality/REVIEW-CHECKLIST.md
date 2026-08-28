@@ -1,28 +1,28 @@
-# Engineering Quality Review Checklist
+# 工程质量评审清单
 
-## Experience
+## 用户体验
 
-- Happy, empty, loading, error, retry, offline, and recovery behavior are defined.
-- English and Chinese, all typed dictionaries, narrow windows, keyboard focus, dark mode, and reduced motion are checked.
-- Window close/reopen and persisted-state behavior are intentional.
+- 正常、空数据、加载、错误、重试、离线和恢复行为均有明确定义。
+- 已检查中英文、全部类型化字典、窄窗口、键盘焦点、暗黑模式和减少动态效果。
+- 窗口关闭与重新打开、持久化状态恢复都符合明确设计。
 
-## Security and privacy
+## 安全和隐私
 
-- Renderer code contains no Node.js or raw Electron access.
-- Every IPC method has a narrow contract, sender validation, input validation, and serializable output.
-- Navigation, popups, permissions, remote content, clipboard, files, shell, and external URLs are denied or allowlisted.
-- Secrets and private data stay out of renderer bundles, logs, screenshots, crash output, and artifacts.
+- Renderer 代码不包含 Node.js 或原始 Electron 访问。
+- 每个 IPC 方法都有窄接口契约、发送方验证、输入验证和可序列化输出。
+- 导航、弹窗、权限、远程内容、剪贴板、文件、shell 和外部 URL 默认拒绝或使用 allowlist。
+- secrets 和私密数据不进入 renderer bundle、日志、截图、崩溃输出和打包产物。
 
-## Performance and stability
+## 性能和稳定性
 
-- Startup and first-window work is bounded.
-- Local files and databases have schema migration, size limits, backup, and corruption recovery.
-- Listeners are removed and windows/processes close cleanly.
-- Unit and real-window tests protect the changed contract.
-- Linux, macOS, and Windows packaging succeeds before release.
+- 启动阶段和首个窗口的工作量有明确边界。
+- 本地文件和数据库具备 schema 迁移、容量限制、备份和数据损坏恢复方案。
+- Listener 能够正确移除，窗口和进程能够完整退出。
+- 单元测试和真实窗口测试能够保护变更契约。
+- 发布前已通过 Linux、macOS 和 Windows 打包。
 
-## Release
+## 发布
 
-- `pnpm check` passes from a clean install.
-- Signing, notarization, update publication, and rollback are configured before public distribution.
-- Current facts, architecture, and operations are documented canonically.
+- 从全新安装状态运行 `pnpm check` 可以通过。
+- 公开分发前已配置代码签名、公证、更新发布和回滚。
+- 当前事实、架构和运维操作都记录在唯一的规范文档中。

@@ -1,3 +1,3 @@
-# Changelog
+# 变更记录
 
-Record released desktop behavior, compatibility, migration, and operationally relevant changes here.
+在此记录已经发布的桌面端行为、兼容性、迁移要求和影响运维的变更。

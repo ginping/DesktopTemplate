@@ -1,11 +1,11 @@
-# Engineering Quality
+# 工程质量
 
-Evaluate changes across experience, performance, security, cost, and stability.
+所有变更都需要从用户体验、性能、安全、成本和稳定性五个方面评估。
 
-1. Define the visible outcome and failure/recovery states.
-2. Test pure behavior at the lowest layer.
-3. Run `pnpm check:fast` while iterating.
-4. Run `pnpm check` before merging to package and exercise a real window.
-5. Produce platform artifacts in CI before release work.
+1. 定义用户可感知的结果，以及失败和恢复状态。
+2. 在能够保护目标行为的最低层编写测试。
+3. 开发过程中运行 `pnpm check:fast`。
+4. 合并前运行 `pnpm check`，完成打包并启动真实窗口。
+5. 开始发布前，先在 CI 中生成各平台产物。
 
-Local-first simplicity is a quality property. Avoid native modules, background services, sync, auto-update, and new IPC until a concrete workflow needs them. Use [the review checklist](REVIEW-CHECKLIST.md) and [security contract](SECURITY.md).
+本地优先和保持简单同样属于质量要求。在具体流程确实需要之前，不引入原生模块、后台服务、同步、自动更新或新的 IPC。变更时使用[评审清单](REVIEW-CHECKLIST.md)和[安全契约](SECURITY.md)。

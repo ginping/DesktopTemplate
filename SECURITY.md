@@ -1,5 +1,5 @@
-# Security Policy
+# 安全策略
 
-Security fixes are supported on the `main` branch.
+安全修复以 `main` 分支为准。
 
-Do not open a public issue for a suspected vulnerability. Use GitHub's **Report a vulnerability** flow in the repository Security tab and include the affected revision, impact, and a minimal reproduction without credentials or personal data.
+如果发现疑似漏洞，请勿创建公开 Issue。请在仓库的 Security 页面使用 **Report a vulnerability** 私密报告入口，并提供受影响的版本、影响范围和最小复现。报告中不得包含凭证或个人数据。
